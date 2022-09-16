@@ -20,10 +20,10 @@ app.use(express.json());
 
 app.use("/api/v1/checkout", stripeRoute);
 
-// app.listen(process.env.PORT || 5000, () => {
-//   console.log("Backend server is running!");
-// });
-
-app.listen(5003, () => {
-  console.log("Backend payment server is running!");
+app.listen(process.env.PORT || 5003, () => {
+  console.log("Backend server is running!");
 });
+
+// app.listen(5003, () => {
+//   console.log("Backend payment server is running!");
+// });
