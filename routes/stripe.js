@@ -2,6 +2,11 @@ const router = require("express").Router();
 const Stripe = require('stripe');
 const stripe = Stripe('sk_test_51LQvEKAjPRkUStMY1WBEiw2U9uw2y5PbqpK7sdHFAVYcARCw0yPhQLL0YP7XfDAtGUVhzaBADOUb9LzgDLsAOSY400SfkLjvaG');
 const Payment = require('../models/Payment');
+const {
+  verifyToken,
+  verifyTokenAndAuthorization,
+  verifyTokenAndAdmin,
+} = require("./verifyToken");
 
 router.post("/create-payment-intent",verifyTokenAndAuthorization, async (req, res) => {
   try {
